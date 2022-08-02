@@ -1,11 +1,8 @@
 import './style.css'
-import { setupCounter } from './counter'
-
-import {name, age} from './bases/01-types';
+//import { pokemons } from './bases/02-objects'
+// import {name, age} from './bases/01-types';
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <h1>Hello ${name} ${age}!!!</h1>
+  <h1>Hello Vite!!!</h1>
   <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
 `
-
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
