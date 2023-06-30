@@ -6,48 +6,77 @@ import { ApiProperty } from "@nestjs/swagger";
 @Entity({ name: 'products' })
 export class Product {
 
-    @ApiProperty()
+    @ApiProperty({
+        example: '550e8400-e29b-41d4-a716-446655440000',
+        description: 'Product ID',
+        uniqueItems: true
+    })
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
-    @ApiProperty()
+    @ApiProperty({
+        example: 'T-Shirt Teslo',
+        description: 'Product title',
+        uniqueItems: true
+    })
     @Column('text', {
         unique: true,
     })
     title: string;
 
-    @ApiProperty()
+    @ApiProperty({
+        example: 0,
+        description: 'Product price'        
+    })
     @Column('float', {
         default: 0
     })
     price: number;
 
-    @ApiProperty()
+    @ApiProperty({
+        example: 'Lorem upsum',
+        description: 'Product description',
+        default: null
+    })
     @Column({
         type: 'text',
         nullable: true
     })
     description: string;
 
-    @ApiProperty()
+    @ApiProperty({
+        example: 't_shirt_teslo',
+        description: 'Product SLUG - fro SEO',
+        uniqueItems: true
+    })
     @Column('text', {
         unique: true
     })
     slug: string;
 
-    @ApiProperty()
+    @ApiProperty({
+        example: 10,
+        description: 'Product stock',
+        default: 0        
+    })
     @Column('int', {
         default: 0
     })
     stock: number;
 
-    @ApiProperty()
+    @ApiProperty({
+        example: ['M', 'XL', 'XXL'],
+        description: 'Product sizes'
+    })
     @Column('text', {
         array: true
     })
     sizes: string[]
 
-    @ApiProperty()
+    @ApiProperty({
+        example: 'women',
+        description: 'Product gender'
+    })
     @Column('text')
     gender: string;
 
